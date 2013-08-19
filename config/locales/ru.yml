@@ -1,0 +1,102 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+ru:
+  header:
+    menu:
+      brand: "EBashIm"
+      quoters: "Цитатники"
+      quotes: "Цитаты"
+      user:
+        sign_in: "Войти"
+        sign_out: "Выйти"
+        change_password: "Сменить пароль"
+  footer:
+    author: "Никита Воробей"
+  forms:
+    save: "Сохранить"
+  quoters:
+    index: &quoter_values
+      title: "Цитатники"
+      create: "Добавить цитатник"
+      id: "#"
+      name: "Имя"
+      rss_url: "Адрес rss"
+      actions: "Действия"
+      action_edit: "Изменить"
+      action_delete: "Удалить"
+      are_you_sure: "Вы уверены?"
+    new:
+      title: "Добавить цитатник"
+    edit:
+      title: "Изменить цитатник"
+  quotes:
+    index:
+      title: "Цитаты"
+      quoter: "Цитатник"
+      publicated_at: "Опубликовано"
+  users:
+    sessions:
+      new:
+        sign_in: "Войти"
+        remember_me: "Запомнить меня"
+    passwords:
+      new:
+        forgot_your_password: "Забыли пароль?"
+        send_instructions: "Выслать инструкции по восстановлению"
+      edit:
+        change_password: "Сменить пароль"
+    registrations:
+      edit:
+        edit: "Изменить мои данные"
+        save: "Сохранить"
+    mailer:
+      reset_password_instructions:
+        greeting: "Здравствуйте, %{email}!"
+        someone_has_requested_a_link: "Кто-то запросил смену вашего пароля. Если это были вы, то можете это сделать по ссылке ниже."
+        change_my_password: "Изменить мой пароль"
+        ignore_mail: "Если вы не запрашивали смену пароля, то проигнорируйте это сообщение."
+        create_password: "Ваш пароль не изменится, пока вы не перейдёте по ссылке и не создадите новый пароль."
+  views:
+    pagination:
+      first: "&laquo; Первая"
+      last: "Последняя &raquo;"
+      previous: "&lsaquo;"
+      next: "&rsaquo;"
+      truncate: "&hellip;"
+  layouts:
+    devise:
+      back: "Назад"
+  activerecord:
+    models:
+      quoter: "Цитатник"
+    attributes:
+      quoter:
+        <<: *quoter_values
+      user:
+        email: "Email"
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
+        current_password: "Текущий пароль"
+        reset_password_token: "Токен сброса пароля"
+  time:
+    formats:
+      default: "%e %B %Y в %H:%M"

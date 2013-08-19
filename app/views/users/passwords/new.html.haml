@@ -1,0 +1,8 @@
+%legend= t('.forgot_your_password')
+= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f|
+  = devise_error_messages!
+  = f.email_field :email, :autofocus => true, :class => 'span4', :placeholder => User.human_attribute_name(:email)
+  = f.submit t('.send_instructions'), :class => 'btn btn-info btn-block'
+= render "users/shared/links"
+
+

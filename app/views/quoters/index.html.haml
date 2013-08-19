@@ -1,0 +1,30 @@
+%h2= t('.title')
+%hr
+- if user_signed_in?
+  .pull-right
+    = link_to t('.create'), new_quoter_path
+%table.table
+  %thead
+    %tr
+      %th= t('.id')
+      %th= t('.name')
+      %th= t('.rss_url')
+      - if user_signed_in?
+        %th= t('.actions')
+  %tbody
+    - @quoters.each do |quoter|
+      %tr
+        %td= quoter.id
+        %td= link_to quoter.name, quoter_quotes_path(quoter)
+        %td= quoter.rss_url
+        - if user_signed_in?
+          %td.text-right
+            = link_to edit_quoter_path(quoter), :title => t('.action_edit') do
+              %i.icon-edit
+            = link_to quoter_path(quoter), :method => :delete, :title => t('.action_delete'), :data => {:confirm => t('.are_you_sure')} do
+              %i.icon-trash
+    - if @quoters.empty?
+      %tr
+        %td{:colspan => (user_signed_in? ? 4 : 3)}
+          %p.text-center No quoters
+  

@@ -1,0 +1,11 @@
+= form_for @quoter do |q|
+  - if @quoter.errors.any?
+    .alert.alert-error
+      %ul
+        - @quoter.errors.full_messages.each do |msg|
+          %li=msg
+    
+  %fieldset
+    = q.text_field :name, :class => 'input-block-level', :placeholder => Quoter.human_attribute_name(:name)
+    = q.text_field :rss_url, :class => 'input-block-level', :placeholder => Quoter.human_attribute_name(:rss_url)
+    = q.submit t('forms.save'), :class => 'btn btn-warning pull-right'

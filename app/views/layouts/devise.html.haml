@@ -1,0 +1,22 @@
+!!!
+%html
+  %head
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %title= t('header.menu.brand')
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+    /[if lt IE 9]
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  %body
+    .login-form
+      .row
+        .push
+        .span4.offset4.well
+          = yield
+          %hr
+          = link_to t('.back'), :back
+    #flash.hidden
+      #notice= notice
+      #alert= alert

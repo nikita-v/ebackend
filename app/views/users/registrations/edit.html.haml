@@ -1,0 +1,9 @@
+%legend= t('.edit')
+= form_for(resource, :as => resource_name, :url => registration_path, :html => { :method => :patch }) do |f|
+  = devise_error_messages!
+  = f.email_field :email, :autofocus => true, :class => 'span4', :placeholder => User.human_attribute_name(:email)
+  = f.password_field :password, :autocomplete => 'off', :class => 'span4', :placeholder => User.human_attribute_name(:password)
+  = f.password_field :password_confirmation, :class => 'span4', :placeholder => User.human_attribute_name(:password_confirmation)
+  = f.password_field :current_password, :class => 'span4', :placeholder => User.human_attribute_name(:current_password)
+  = f.submit t('.save'), :class => 'btn btn-info btn-block'
+  

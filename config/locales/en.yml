@@ -1,0 +1,95 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  header:
+    menu:
+      brand: "EBashIm"
+      quoters: "Quoters"
+      quotes: "Quotes"
+      user:
+        sign_in: "Sign in"
+        sign_out: "Sign out"
+        change_password: "Change password"
+  footer:
+    author: "Nikita Vorobey"
+  forms:
+    save: "Save"
+  quoters:
+    index: &quoter_values
+      title: "Quoters"
+      create: "Add quoter"
+      id: "#"
+      name: "Name"
+      rss_url: "Rss url"
+      actions: "Actions"
+      action_edit: "Edit"
+      action_delete: "Delete"
+      are_you_sure: "Are you sure?"
+    new:
+      title: "Add quoter"
+    edit:
+      title: "Edit quoter"
+  quotes:
+    index:
+      title: "Quotes"
+      quoter: "Quoter"
+      publicated_at: "Published at"
+  users:
+    sessions:
+      new:
+        sign_in: "Sign in"
+        remember_me: "Remember me"
+    passwords:
+      new:
+        forgot_your_password: "Forgot your password?"
+        send_instructions: "Send me reset password instructions"
+      edit:
+        change_password: "Change password"
+    registrations:
+      edit:
+        edit: "Edit"
+        save: "Save"
+    mailer:
+      reset_password_instructions:
+        greeting: "Hello %{email}!"
+        someone_has_requested_a_link: "Someone has requested a link to change your password. You can do this through the link below."
+        change_my_password: "Change my password"
+        ignore_mail: "If you didn't request this, please ignore this email."
+        create_password: "Your password won't change until you access the link above and create a new one."
+  layouts:
+    devise:
+      back: "Back"
+  activerecord:
+    models:
+      quoter: "Quoter"
+    attributes:
+      quoter:
+        <<: *quoter_values
+      user:
+        email: "Email"
+        password: "Password"
+        password_confirmation: "Password confirmation"
+        current_password: "Current password"
+        reset_password_token: "Reset password token"
+  time:
+    formats:
+      default: "%B %d, %Y %H:%M"

@@ -1,0 +1,10 @@
+%legend= t('.sign_in')
+= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+  = f.email_field :email, :autofocus => true, :class => 'span4', :placeholder => User.human_attribute_name(:email)
+  = f.password_field :password, :class => 'span4', :placeholder => User.human_attribute_name(:password)
+  = f.label :remember_me, :class => 'checkbox' do
+    = f.check_box :remember_me
+    = t('.remember_me')
+  = f.submit t('.sign_in'), :class => 'btn btn-info btn-block'
+.links
+  = render "users/shared/links"

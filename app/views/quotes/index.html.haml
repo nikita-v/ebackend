@@ -1,0 +1,15 @@
+%h2= t('.title')
+%hr
+- @quotes.each do |quote|
+  %h3= quote.title
+  = simple_format(quote.body, {}, :wrapper_tag => 'blockquote')
+  %p.muted
+    %span
+      = "##{quote.id}"
+      - if quote.association(:quoter).loaded?
+        = " | #{t('.quoter')}: "
+        = link_to quote.quoter.name, quoter_quotes_path(quote.quoter)
+      %span.hidden-phone
+        = " | #{t('.publicated_at')}: #{l(quote.publicated_at)}"
+  %hr
+= paginate @quotes
